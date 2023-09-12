@@ -15,3 +15,22 @@ Ollama
 -
 You can find the ollama bits on https://ollama.ai with source code on https://github.com/jmorganca/ollama.
 
+Make run from source code on Windows
+---
+
+To make run Ollama from source code you will need to install a few tools.
+
+1. Git
+
+2. Python
+
+3. Go
+
+4. Gcc
+
+5. Winlibs
+
+6. Bazel
+
+7. Nvidia software drivers
+
