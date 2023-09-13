@@ -9,7 +9,7 @@ The provider Meta has released some of its LLMs so that you can host them locall
 Ollama.ai began implementing the LLM as installable console applications on MacOS in mid-2023.
 There are now corresponding setups from source code for Linux and Windows, and also more variations of LLMs.
 
-In this blog entry I will show how to install ollama and make use of the so-called langchain module which allows to specify a pdf document as LLM learning source.
+In this blog entry I will show how to install ollama and make use of the so-called langchain-document module which allows to specify a pdf document as LLM learning source.
 
 Ollama
 -
