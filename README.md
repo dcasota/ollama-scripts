@@ -88,7 +88,7 @@ It opens a window with a similar content as below.
 <img src="https://github.com/dcasota/ollama-scripts/assets/14890243/98f81dd6-fb9a-488b-bd21-7d459a942e73" alt="image" width="800">
 
 
-Download the selected model.
+Download the model chosen.
 
 `.\ollama.exe pull llama2:70b`
 
@@ -145,7 +145,7 @@ pip install langchain
 ```
 
 The main.py of the langchain-document example loads and processes a pdf document. We simply change the pdf weblink by changing the OnlinePDFLoader line.
-The document proposed is from the University of Applied Sciences Northwestern Switzerland.
+The document proposed is from the [University of Applied Sciences Northwestern Switzerland](https://www.fhnw.ch/en/continuing-education/business).
 
 ```
 # load the pdf and split it into chunks
