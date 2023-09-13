@@ -3,17 +3,16 @@ What are Large Language Models?
 We learn a language at home, at school and later over several years. Our speech experience is a kind of big training set that helps us to articulate with the best reaction in every situation. In computer science, a deep learning algorithm is trained to gain the ability to recognize, summarize, translate, predict, and generate text based on information from large training data sets.
 Such language models use statistical methods to predict the next natural language token in a sequence and use previous words to determine what the next word should look like. Large language models pre-trained in neural networks with huge data sets ranging from hundreds of millions to over a trillion parameters can help us regain time when completing a task by leveraging answers from the LLM conversations.
 
-A few software companies started early to offer LLMs services. Often, the client apps are just wrappers for the communication with a backend- hosted LLM. 
-In 2023, the ecosystem grew very fast and there were exciting progress news practically on a daily basis. This initial LLM start has been initiated by the company OpenAI with its chat client called chatgpt. Microsoft started to introduce copilot in Microsoft Bing. [Huggingfaces](https://huggingface.co/models) started its own community platform to host models, datasets, libraries, etc.
+Some software companies started offering LLM services early on. Often the client apps were just wrappers for communication with a LLM hosted in the backend. In 2023, the ecosystem grew very quickly and there was exciting progress news almost daily. This first LLM launch was initiated by the company OpenAI with their chat client called chatgpt. Microsoft has started rolling out Copilot for Microsoft Bing. [Huggingfaces](https://huggingface.co/models) has launched its own community platform for hosting models, datasets, libraries, etc.
 
-Meta (Facebook) released some of its LLMs for free use to host them locally. Sufficient operational computing capacity should be made available to enable reasonably high-performance entertainment.
-The Llama2 LLM became very popular in the open source community. In mid-2023, Ollama.ai began implementing the LLM as installable console applications on MacOS. There are now corresponding setups from source code for Linux and Windows, and also more variations of LLMs.
+Meta (Facebook) has released some of its LLMs for local hosting for free. The Llama2 LLM was very popular in the open source community. In mid-2023, Ollama.ai began implementing the LLM as installable console applications on MacOS. There are now corresponding setups from the source code for Linux and Windows as well as other variants of LLMs. There should be enough operational computing capacity available to enable reasonably powerful entertainment. 
 
-In this blog entry you learn how to install ollama and make use of the so-called langchain-document module which allows to specify a pdf document as LLM learning source.
+In this blog post you will learn how to install Ollama and use the so-called langchain-document module, which allows you to specify a PDF document as an LLM learning source.
+
 
 Ollama
 -
-You can find the ollama bits on https://ollama.ai with source code on https://github.com/jmorganca/ollama.
+You can find the Ollama bits on https://ollama.ai with source code on https://github.com/jmorganca/ollama.
 
 Straighforward make run from source code on Microsoft Windows
 --
@@ -69,7 +68,7 @@ Ollama offers a few LLMs, see https://ollama.ai/library.
 
 It is very important to check the RAM requirements for each LLM.
 
-As example, the [LLM llama2](https://ollama.ai/library/llama2) is downloadable in 3 models: llama2:7b, llama2:13b and llama:70b, hence choose wisely.
+As example, the [LLM llama2](https://ollama.ai/library/llama2) is downloadable in 3 models: llama2:7b, llama2:13b and llama:70b.
 
 Memory requirements
 7b models generally require at least 8GB of RAM
@@ -77,7 +76,7 @@ Memory requirements
 70b models generally require at least 64GB of RAM
 
 
-First, start the server component of ollama.
+First, start the server component of Ollama.
 
 Powershell:
 `start-process ollama.exe serve`
@@ -145,7 +144,8 @@ pip install -r .\examples\langchain-document\requirements.txt
 pip install langchain
 ```
 
-The main.py of the langchain-document example loads and processes a pdf document. We can change the pdf weblink by changing the OnlinePDFLoader line.
+The main.py of the langchain-document example loads and processes a pdf document. We simply change the pdf weblink by changing the OnlinePDFLoader line.
+The document proposed is from the University of Applied Sciences Northwestern Switzerland.
 
 ```
 # load the pdf and split it into chunks
@@ -153,16 +153,17 @@ loader = OnlinePDFLoader("https://www.fhnw.ch/en/continuing-education/business/c
 data = loader.load()
 ```
 
-The model is specified in the main.py as well. Change it to llama2:70b.
+
+The model type is specified in the main.py as well. Change it to llama2:70b.
 ```
 llm = Ollama(model="llama2:70b", callback_manager=CallbackManager([StreamingStdOutCallbackHandler()]))
 ```
 
 Start the model with `python .\examples\langchain-document\main.py`.
 
-You can ask for example `When does the bootcamp 1 start?`.
+You now can ask for example `When does the bootcamp 1 start?`.
 
-<img src="https://github.com/dcasota/ollama-scripts/assets/14890243/e39382b4-9520-4361-ae2c-eb699210b26a" alt="image" width="800">
+<img src="https://github.com/dcasota/ollama-scripts/assets/14890243/22542c60-92f5-4acd-bb22-084e3b7c116f" alt="image" width="1000">
 
 
 
