@@ -20,22 +20,37 @@ Straighforward make run from source code on Microsoft Windows
 
 To make run Ollama from source code you will need to install a few tools.
 
-1. Nvidia gpu drivers assuming an Nvidia gpu
+1. Nvidia gpu support does not work yet. Nevertheless if you have a Nvidia gpu, you need for sure to install the drivers.
+   https://www.nvidia.com/download/index.aspx
+
+   PhysX>Blast seems to become necessary for NVidia gpu support, as well.
+   https://github.com/NVIDIA-Omniverse/PhysX
 
 2. Git
+   https://git-scm.com/download/win
 
 3. Python
+   https://www.python.org/downloads/windows/
 
 4. Go
+   https://go.dev/doc/install
 
 5. Gcc
+   https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/
 
 6. Winlibs
+   https://winlibs.com/
 
 7. Bazel
+   https://github.com/bazelbuild/bazel/releases
 
 
-Accordingly to the Ollama reference, the setup is straightforward.
+In the [Ollama github discussion about Windows support](https://github.com/jmorganca/ollama/issues/188#issuecomment-1710151775), Jeffrey Morgan, initiator of Ollama, recognized the setup importance.
+It is good to consult the github source from time to time to benefit from new findings.
+
+After the installation of prerequired component, proceed with the installation of ollama.
+
+Simply clone the github repository and use go to compile the source.
 
 ```
 git clone https://github.com/jmorganca/ollama
@@ -45,7 +60,7 @@ go generate .\...
 go build .
 ```
 
-In the setup directory, you can check if the executable ollama.exe has been created.
+In the setup directory you can check if the executable ollama.exe has been created.
 
 Configure the LLM
 --
@@ -107,12 +122,12 @@ Those libraries can be installed using the python pip installer.
 
 `pip install -r requirements.txt`
 
-Those requirements.txt files are generic and can be run on Linux (and MacOS I guess) as well. However depending on your os, you might need to ensure that dependent prerequired libraries are installed as well.
+Those requirements.txt files are generic and can be run on Linux (and MacOS I guess) as well. However depending on your os, you might need to ensure that dependent libraries are installed as well.
 
 Langchain-document example
 ---
 
-Here an example setup for langchain-document. It must to be said, that installing the requirements.txt stills finishes with issues because there is a missing component which seems to be available on MacOS only. However, with the setup proposed, the main.py starts flawlessly.
+Here an example setup for langchain-document. It must to be said, that installing the requirements.txt stills finishes with issues because there is a missing component (tensorflow-macos) which seems to be available on MacOS only. However, with the setup proposed, the main.py starts flawlessly.
 
 ```
 pip install unstructured
@@ -147,7 +162,7 @@ Start the model with `python .\examples\langchain-document\main.py`.
 
 You can ask for example `When does the bootcamp 1 start?`.
 
-<img src="https://github.com/dcasota/ollama-scripts/assets/14890243/bce9db96-4f5c-4d3d-a052-84a3a6820a6d" alt="image" width="600">
+<img src="https://github.com/dcasota/ollama-scripts/assets/14890243/33878024-b1de-455f-bb95-f2aba5d3a379" alt="image" width="600">
 
 
 
