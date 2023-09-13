@@ -138,7 +138,7 @@ loader = OnlinePDFLoader("https://www.fhnw.ch/en/continuing-education/business/c
 data = loader.load()
 ```
 
-The model is specified in the main.py as well. Change it to use llama2:70b.
+The model is specified in the main.py as well. Change it to llama2:70b.
 ```
 llm = Ollama(model="llama2:70b", callback_manager=CallbackManager([StreamingStdOutCallbackHandler()]))
 ```
