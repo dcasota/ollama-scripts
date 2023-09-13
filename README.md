@@ -70,10 +70,10 @@ It is very important to check the RAM requirements for each LLM.
 
 As example, the [LLM llama2](https://ollama.ai/library/llama2) is downloadable in 3 models: llama2:7b, llama2:13b and llama:70b.
 
-Memory requirements
-7b models generally require at least 8GB of RAM
-13b models generally require at least 16GB of RAM
-70b models generally require at least 64GB of RAM
+Memory requirements  
+7b models generally require at least 8GB of RAM  
+13b models generally require at least 16GB of RAM  
+70b models generally require at least 64GB of RAM  
 
 
 First, start the server component of Ollama.
