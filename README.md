@@ -147,6 +147,10 @@ Start the model with `python .\examples\langchain-document\main.py`.
 
 Ask: "When does the bootcamp 1 start?"
 
+![image](https://github.com/dcasota/ollama-scripts/assets/14890243/7248a10e-e6b9-468a-b128-43fe963f3c8c)
+
+
+
 For further tinkering, see https://github.com/jmorganca/ollama/blob/main/docs/tutorials/langchainpy.md. 
 
 
