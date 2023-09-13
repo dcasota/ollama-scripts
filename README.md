@@ -1,15 +1,15 @@
 What are Large Language Models?
 -
-From home, at school and later on we learn a language over several years. This said, our language experience is a sort of a large training set which helps us to articulate in each situation with the best response. In computer science, a deep learning algorithm is trained to achieve the ability to recognize, summarize, translate, predict and generate text based on information from large training data sets.
-Language models use statistical methods to predict the next natural language token in a sequence, determining what the next word should look like based on previous words. Pretrained in neural networks with huge data sets ranging from hundreds of millions to over a trillion parameters, large language models can help us with reclaiming time by utilizing good responses from LLM conversations.
+We learn a language at home, at school and later over several years. Our speech experience is a kind of big training set that helps us to articulate with the best reaction in every situation. In computer science, a deep learning algorithm is trained to gain the ability to recognize, summarize, translate, predict, and generate text based on information from large training data sets.
+Such language models use statistical methods to predict the next natural language token in a sequence and use previous words to determine what the next word should look like. Large language models pre-trained in neural networks with huge data sets ranging from hundreds of millions to over a trillion parameters can help us regain time when completing a task by leveraging answers from the LLM conversations.
 
-Manufacturers such as Microsoft offer online services for hosted LLMs. The client programs themselves are just wrappers for the user input.
+A few software companies started early to offer LLMs services. Often, the client apps are just wrappers for the communication with a backend- hosted LLM. 
+In 2023, the ecosystem grew very fast and there were exciting progress news practically on a daily basis. This initial LLM start has been initiated by the company OpenAI with its chat client called chatgpt. Microsoft started to introduce copilot in Microsoft Bing. [Huggingfaces](https://huggingface.co/models) started its own community platform to host models, datasets, libraries, etc.
 
-The provider Meta has released some of its LLMs so that you can host them locally yourself. Sufficient operational computing capacity should be made available to enable reasonably high-performance entertainment. The Llama2 LLM became very popular in the open source community.
-Ollama.ai began implementing the LLM as installable console applications on MacOS in mid-2023.
-There are now corresponding setups from source code for Linux and Windows, and also more variations of LLMs.
+Meta (Facebook) released some of its LLMs for free use to host them locally. Sufficient operational computing capacity should be made available to enable reasonably high-performance entertainment.
+The Llama2 LLM became very popular in the open source community. In mid-2023, Ollama.ai began implementing the LLM as installable console applications on MacOS. There are now corresponding setups from source code for Linux and Windows, and also more variations of LLMs.
 
-In this blog entry I will show how to install ollama and make use of the so-called langchain-document module which allows to specify a pdf document as LLM learning source.
+In this blog entry you learn how to install ollama and make use of the so-called langchain-document module which allows to specify a pdf document as LLM learning source.
 
 Ollama
 -
@@ -145,9 +145,10 @@ llm = Ollama(model="llama2:70b", callback_manager=CallbackManager([StreamingStdO
 
 Start the model with `python .\examples\langchain-document\main.py`.
 
-Ask: "When does the bootcamp 1 start?"
+You can ask for example `When does the bootcamp 1 start?`.
 
-![image](https://github.com/dcasota/ollama-scripts/assets/14890243/7248a10e-e6b9-468a-b128-43fe963f3c8c)
+![image](https://github.com/dcasota/ollama-scripts/assets/14890243/bce9db96-4f5c-4d3d-a052-84a3a6820a6d)
+
 
 
 
