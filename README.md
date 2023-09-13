@@ -1,7 +1,7 @@
 What are Large Language Models?
 -
-Human language is very extensive and we humans learn a language over several years. A deep learning algorithm has the ability to recognize, summarize, translate, predict and generate text and other content based on information from large training data sets.
-Language models use statistical methods to predict the next natural language token in a sequence, determining what the next word should look like based on previous words. In neural networks, language models are trained on huge data sets ranging from hundreds of millions to over a trillion parameters. The result of the parameterization and the many runs is a so-called Large Language Model.
+From home, at school and later on we learn a language over several years. This said, our language experience is a sort of a large training set which helps us to articulate in each situation with the best response. In computer science, a deep learning algorithm is trained to achieve the ability to recognize, summarize, translate, predict and generate text based on information from large training data sets.
+Language models use statistical methods to predict the next natural language token in a sequence, determining what the next word should look like based on previous words. Pretrained in neural networks with huge data sets ranging from hundreds of millions to over a trillion parameters, large language models can help us with reclaiming time by utilizing good responses from LLM conversations.
 
 Manufacturers such as Microsoft offer online services for hosted LLMs. The client programs themselves are just wrappers for the user input.
 
@@ -20,7 +20,7 @@ Straighforward make run from source code on Microsoft Windows
 
 To make run Ollama from source code you will need to install a few tools.
 
-1. Nvidia gpu drivers
+1. Nvidia gpu drivers assuming an Nvidia gpu
 
 2. Git
 
@@ -71,7 +71,7 @@ Batch console:
 `start "Ollama server component" ollama.exe serve`
 
 It opens a window with a similar content as below.
-![image](https://github.com/dcasota/ollama-scripts/assets/14890243/98f81dd6-fb9a-488b-bd21-7d459a942e73)
+<img src="https://github.com/dcasota/ollama-scripts/assets/14890243/98f81dd6-fb9a-488b-bd21-7d459a942e73" alt="image" width="800">
 
 
 Download the selected model.
@@ -85,15 +85,70 @@ Run the model.
 
 `.\ollama.exe run llama2:70b`
 
-Examples
+Be aware - depending on the model, you get weired answers.
+
+Model use cases - examples
 --
 
 Ollama comes with a bunch of examples for different use cases, see directory `examples`.
 
-![image](https://github.com/dcasota/ollama-scripts/assets/14890243/8f5562b1-bf5e-4321-9c54-da5a780c6a41)
+<img src="https://github.com/dcasota/ollama-scripts/assets/14890243/8f5562b1-bf5e-4321-9c54-da5a780c6a41" alt="image" width="200">
 
-All examples are written in python.
 
-At this point, it is good to know, that the first setup might not be enough. The python examples have additional prerequisites. The requirements
+All examples are written in python. You find in each subdirectory a python file named `main.py`.
+
+<img src="https://github.com/dcasota/ollama-scripts/assets/14890243/9720f1e2-459c-4553-960f-aec053c44a5d" alt="image" width="120">
+
+At this point, it is good to know, that the first setup might not be enough.
+
+Simply starting the file with `python.exe main.py` usually stops with issues because prerequired libraries are not installed.
+
+Those libraries can be installed using the python pip installer.
+
+`pip install -r requirements.txt`
+
+Those requirements.txt files are generic and can be run on Linux (and MacOS I guess) as well. However depending on your os, you might need to ensure that dependent prerequired libraries are installed as well.
+
+Langchain-document example
+---
+
+Here an example setup for langchain-document. It must to be said, that installing the requirements.txt stills finishes with issues because there is a missing component which seems to be available on MacOS only. However, with the setup proposed, the main.py starts flawlessly.
+
+```
+pip install unstructured
+pip install pdf2image
+pip install pdfminer
+pip install pdfminer.six
+pip install pyproject.toml
+pip install pysqlite3
+pip install gpt4all
+pip install chromadb
+pip install tensorflow
+pip install opencv-python
+pip install bazel-runfiles
+pip install -r .\examples\langchain-document\requirements.txt
+pip install langchain
+```
+
+The main.py of the langchain-document example loads and processes a pdf document. We can change the pdf weblink by changing the OnlinePDFLoader line.
+
+```
+# load the pdf and split it into chunks
+loader = OnlinePDFLoader("https://www.fhnw.ch/en/continuing-education/business/cas-cybersecurity-and-information-risk-management/media/timetable_cas-cirm.pdf)https://www.fhnw.ch/en/continuing-education/business/cas-cybersecurity-and-information-risk-management/media/timetable_cas-cirm.pdf")
+data = loader.load()
+```
+
+The model is specified in the main.py as well. Change it to use llama2:70b.
+```
+llm = Ollama(model="llama2:70b", callback_manager=CallbackManager([StreamingStdOutCallbackHandler()]))
+```
+
+Start the model with `python .\examples\langchain-document\main.py`.
+
+Ask: "When does the bootcamp 1 start?"
+
+
+
+
 
 
