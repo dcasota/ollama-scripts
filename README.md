@@ -162,7 +162,7 @@ Start the model with `python .\examples\langchain-document\main.py`.
 
 You can ask for example `When does the bootcamp 1 start?`.
 
-<img src="https://github.com/dcasota/ollama-scripts/assets/14890243/33878024-b1de-455f-bb95-f2aba5d3a379" alt="image" width="600">
+<img src="https://github.com/dcasota/ollama-scripts/assets/14890243/e39382b4-9520-4361-ae2c-eb699210b26a" alt="image" width="800">
 
 
 
