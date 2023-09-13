@@ -47,9 +47,9 @@ To make run Ollama from source code you will need to install a few tools.
 In the [Ollama github discussion about Windows support](https://github.com/jmorganca/ollama/issues/188#issuecomment-1710151775), Jeffrey Morgan, initiator of Ollama, recognized the setup importance.
 It is good to consult the github source from time to time to benefit from new findings.
 
-After the installation of prerequired component, proceed with the installation of ollama.
+After the installation of prerequired component, proceed with the installation of Ollama.
 
-Simply clone the github repository and use go to compile the source.
+Simply clone the github repository and use Go to compile the source.
 
 ```
 git clone https://github.com/jmorganca/ollama
