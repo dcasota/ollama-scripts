@@ -147,8 +147,6 @@ Start the model with `python .\examples\langchain-document\main.py`.
 
 Ask: "When does the bootcamp 1 start?"
 
-
-
-
+For further tinkering, see https://github.com/jmorganca/ollama/blob/main/docs/tutorials/langchainpy.md. 
 
 
