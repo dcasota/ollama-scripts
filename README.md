@@ -92,8 +92,9 @@ Powershell:
 Batch console:
 `start "Ollama server component" ollama.exe serve`
 
-It opens a window with a similar content as below.
-<img src="https://github.com/dcasota/ollama-scripts/assets/14890243/98f81dd6-fb9a-488b-bd21-7d459a942e73" alt="image" width="800">
+It opens a window with a similar content as below.  
+
+<img src="https://github.com/dcasota/ollama-scripts/assets/14890243/98f81dd6-fb9a-488b-bd21-7d459a942e73" alt="image" width="800">  
 
 
 Download the model chosen.
@@ -227,7 +228,7 @@ In July 2023 they published a comprehensive guide about how to secure LLMs: [OWA
 A LLM-based Multiple Choice Solver - the dream of students ?
 -
 
-Here a [sample paper](https://arxiv.org/pdf/2308.07317.pdf) from students at the Boston University about their journey. In their work it is explained why they needed to prepare a 25K training data set to a given multiple-choice format as input for each question. The students decided to do some performance research using LLM variations of Llama2. As model dataset training hardware they had time-restricted access to an A100 NVidia GPU based environment. The students met their own expectation, created an adopted LLM called Open-Platypus from the training dataset work, published it to the huggingfaces platform, and made their work publicly available.
+Here a [sample paper](https://arxiv.org/pdf/2308.07317.pdf) from students at the Boston University about their journey. In their work it is explained why they needed to prepare a 25K training data set to a given multiple-choice format as input for each question. The students decided to do some performance research using LLM variations of Llama2. As model dataset training hardware they had time-restricted access to an A100 NVidia GPU based environment. The students met their own expectations, created an adopted LLM called Open-Platypus from the training phase, tuned & published it to the huggingfaces platform, and made their work publicly available.
 
 In Ollama, not the Open-Platypus LLM but the evolved [Open-Orca Platypus 13B](https://huggingface.co/Open-Orca/OpenOrca-Platypus2-13B) has been integrated.
 
