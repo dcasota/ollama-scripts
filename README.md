@@ -226,4 +226,4 @@ Here a [sample paper](https://arxiv.org/pdf/2308.07317.pdf) from students at the
 
 In Ollama, not the Open-Platypus LLM but the evolved [Open-Orca Platypus 13B](https://huggingface.co/Open-Orca/OpenOrca-Platypus2-13B) has been integrated.
 
-The beginning of a LLM journey can be full of research. Have fun.
+The beginning of a LLM journey can be full of research. Learn and have fun!
