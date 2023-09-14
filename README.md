@@ -228,8 +228,7 @@ In July 2023 they published a comprehensive guide about how to secure LLMs: [OWA
 A LLM-based Multiple Choice Solver - the dream of students ?
 -
 
-Here a [sample paper](https://arxiv.org/pdf/2308.07317.pdf) from students at the Boston University about their journey. In their work it is explained why they needed to prepare a 25K training data set to a given multiple-choice format as input for each question. The students decided to do some performance research using LLM variations of Llama2. As model dataset training hardware they had time-restricted access to an A100 NVidia GPU based environment. The students met their own expectations, created an adopted LLM called Open-Platypus from the training phase, tuned & published it to the huggingfaces platform, and made their work publicly available.
-
+The beginning of a LLM journey can be full of research first. Here a [sample paper](https://arxiv.org/pdf/2308.07317.pdf) from students at the Boston University about their journey. In their work it is explained why they needed to prepare a 25K training data set to a given multiple-choice format as input for each question. The students decided to do some performance research using LLM variations of Llama2. As model dataset training hardware they had time-restricted access to an A100 NVidia GPU based environment. The students met their own expectations, created an adopted LLM called Open-Platypus from the training phase, tuned & published it to the huggingfaces platform, and made their work publicly available.
 In Ollama, not the Open-Platypus LLM but the evolved [Open-Orca Platypus 13B](https://huggingface.co/Open-Orca/OpenOrca-Platypus2-13B) has been integrated.
 
-The beginning of a LLM journey can be full of research. Learn and have fun!
+It would be a pitty to deny LLM-based multiple choice solvers. It helps to train our brain. The human brain is the ultimate autonomous system, with a weight of 1.2 to 1.4 kg and 86x10^9 neurones. Multiple-Choice Learning means to experience the same quantization bits preference for the environment again and again, you have been trained for - with a dark side of resilience. Be aware and have fun with LLM!
