@@ -25,25 +25,30 @@ To make run Ollama from source code you will need to install a few tools.
    Nvidia CUDA Toolkit
    https://developer.nvidia.com/cuda-downloads
 
+   After the installation, run the command `nvidia-smi` to check if the gpu has been detected.
+   
+   <img src="https://github.com/dcasota/ollama-scripts/assets/14890243/8a0bdca4-a011-4a70-bc83-ed48e9640de6" alt="image" width="600">
+
+
    PhysX>Blast seems to become necessary for NVidia gpu support, as well.
    https://github.com/NVIDIA-Omniverse/PhysX
 
-2. Git
+3. Git
    https://git-scm.com/download/win
 
-3. Python
+4. Python
    https://www.python.org/downloads/windows/
 
-4. Go
+5. Go
    https://go.dev/doc/install
 
-5. Gcc
+6. Gcc
    https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/
 
-6. Winlibs
+7. Winlibs
    https://winlibs.com/
 
-7. Bazel
+8. Bazel
    https://github.com/bazelbuild/bazel/releases
 
 
