@@ -168,7 +168,7 @@ Langchain-document is included as an Ollama example. It reads a PDF document and
 
 From the provisioning perspective it has to be said that installing the included components specified in requirements.txt often finishes with issues. Depending on the example, there are warnings, exceptions because of missing components available on MacOS only, etc. On goal of the Ollama team is to offer resilient setups for MacOS, Linux, Windows and Docker Containers. If you're a good programmer, actions tester and willing to help, contribute with pull requests.
 
-The following code snippet helps to make start the .\examples\langchain-document\main.py.
+The following code snippet still produces warnings, but it helps to make start the .\examples\langchain-document\main.py. 
 
 ```
 pip install unstructured
