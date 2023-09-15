@@ -5,21 +5,23 @@ Such language models use statistical methods to predict the next natural languag
 
 Some software companies started offering LLM services early on. Often the client apps were just wrappers for communication with a LLM hosted in the backend. In 2022, the ecosystem grew very quickly and there was exciting progress news almost daily. This first LLM launch with a tremendous public success was initiated by the company OpenAI with their chat client called chatgpt, based on their hosted models GPT-3.5 and GPT-4. In 2023, Microsoft has started rolling out Copilot for Microsoft Bing. [Huggingfaces](https://huggingface.co/models) has launched its own community platform for hosting models, datasets, libraries, etc. At the VMware Explore Event in Las Vegas there was a Hackathon challenge, and one of the teams curated a [one-stop-shop guide](https://github.com/2023-VMware-Hackathon-HomeTeam/One-stop-shop-to-accelerate-learning-VMware-AI-ML) about learning AI,ML and especially about LLM.
 
-Meta (Facebook) has released some of its LLMs for local hosting for free. The Llama2 LLM was very popular in the open source community. In mid-2023, Ollama.ai began implementing the LLM as installable console applications on MacOS. There are now corresponding setups from the source code for Linux and Windows as well as other variants of LLMs. There should be enough operational computing capacity available to enable reasonably powerful entertainment. The shift from cpu to gpu began quite a while ago, and today's most powerful AI datacenters run on Nvidia gpu hardware. Have a look to [Introduction to AI in the Data Center](https://academy.nvidia.com/en/course/intro-aidc/?cm=12076).
+Meta (Facebook) has released some of its LLMs for local hosting for free. The open-sourced LLM Llama2 became very popular in the open source community. In mid-2023, Ollama.ai began implementing a tool for consuming LLMs as installable console application on MacOS. There are setup recipes for compiling from the source code also for Linux and Windows as well as other variants of LLMs. There should be enough operational computing capacity available to enable reasonably powerful entertainment.
 
-In this blog post you will learn how to install Ollama and use the so-called langchain-document module, which allows you to specify a PDF document as an LLM learning source.
-
+The shift from cpu to gpu began quite a while ago, and today's most powerful AI datacenters run on Nvidia gpu hardware. Have a look to [Introduction to AI in the Data Center](https://academy.nvidia.com/en/course/intro-aidc/?cm=12076).
 
 Ollama
 -
+
+In this blog post you learn how to install Ollama and use the so-called langchain-document module, which allows you to specify a PDF document as an LLM learning source.
+
 You can find the Ollama bits on https://ollama.ai with source code on https://github.com/jmorganca/ollama.
 
 Straighforward make run from source code on Microsoft Windows
 --
 
-To make run Ollama from source code you will need to install a few tools.
+To make run Ollama from source code you will need to install a few tools first.
 
-1. Nvidia gpu support does not work yet. Nevertheless if you have a Nvidia gpu, you need for sure to install the drivers.
+1. Nvidia gpu support for Ollama on Microsoft Windows does not work yet. Nevertheless if you have a Nvidia gpu, you need for sure to install the Windows drivers.
    https://www.nvidia.com/download/index.aspx
 
    Nvidia CUDA Toolkit
@@ -53,9 +55,9 @@ To make run Ollama from source code you will need to install a few tools.
 
 
 In the [Ollama github discussion about Windows support](https://github.com/jmorganca/ollama/issues/188#issuecomment-1710151775), Jeffrey Morgan, initiator of Ollama, recognized the setup importance.
-It is good to consult the github source from time to time to benefit from new findings.
+It is good to consult the Ollama github source from time to time to benefit from new findings.
 
-After the installation of prerequired component, proceed with the installation of Ollama.
+After the installation of prerequired components, proceed with the installation of Ollama.
 
 Simply clone the github repository and use Go to compile the source.
 
@@ -83,14 +85,41 @@ Memory requirements
 13b models generally require at least 16GB of RAM  
 70b models generally require at least 64GB of RAM  
 
+The server component of Ollama offers several commands.
 
-First, start the server component of Ollama.
+```
+.\ollama.exe
+Large language model runner
+
+Usage:
+  ollama [command]
+
+Available Commands:
+  serve       Start ollama
+  create      Create a model from a Modelfile
+  show        Show information for a model
+  run         Run a model
+  pull        Pull a model from a registry
+  push        Push a model to a registry
+  list        List models
+  cp          Copy a model
+  rm          Remove a model
+  help        Help about any command
+
+Flags:
+  -h, --help      help for ollama
+  -v, --version   version for ollama
+
+Use "ollama [command] --help" for more information about a command.
+```
+
+Start the server component of Ollama.
 
 Powershell:
 `start-process ollama.exe serve`
 
 Batch console:
-`start "Ollama server component" ollama.exe serve`
+`start "Ollama Large language model runner" .\ollama.exe serve`
 
 It opens a window with a similar content as below.  
 
@@ -108,7 +137,7 @@ Run the model.
 
 `.\ollama.exe run llama2:70b`
 
-Be aware - depending on the model, you get weired answers.
+Ask questions with the prompt. Be aware - although every model is pretrained, you get weired answers.
 
 Model use cases - examples
 --
@@ -122,22 +151,24 @@ All examples are written in python. You find in each subdirectory a python file 
 
 <img src="https://github.com/dcasota/ollama-scripts/assets/14890243/9720f1e2-459c-4553-960f-aec053c44a5d" alt="image" width="120">
 
-At this point, it is good to know, that the first setup might not be enough.
-
-Simply starting the file with `python.exe main.py` usually stops with issues because prerequired libraries are not installed.
+At this point, it is good to know, that the first setup might not be enough. Simply starting the file with `python.exe main.py` usually stops with issues because prerequired libraries are not installed.
 
 Those libraries can be installed using the python pip installer.
 
+Install the requirements of an example with `pip install`.
+
 `pip install -r requirements.txt`
 
-Those requirements.txt files are generic and can be run on Linux (and MacOS I guess) as well. However depending on your os, you might need to ensure that dependent libraries are installed as well.
+The requirements.txt files are generic and can be run on Linux (and MacOS I guess) as well. However depending on your os, you might need to ensure that dependent libraries are installed as well.
 
 Langchain-document
 --
 
 Langchain-document is included as an Ollama example. It reads a PDF document and answers to questions about the document' content.
 
-From the provisioning perspective, it has to be said, that installing the included requirements.txt stills finishes with issues because there is a missing component (tensorflow-macos) which seems to be available on MacOS only. However, with the setup proposed below, the main.py starts flawlessly.
+From the provisioning perspective it has to be said that installing the included components specified in requirements.txt often finishes with issues. Depending on the example, there are warnings, exceptions because of missing components available on MacOS only, etc. On goal of the Ollama team is to offer resilient setups for MacOS, Linux, Windows and Docker Containers. If you're a good programmer, actions tester and willing to help, contribute with pull requests.
+
+The following code snippet helps to make start the .\examples\langchain-document\main.py.
 
 ```
 pip install unstructured
@@ -155,8 +186,8 @@ pip install -r .\examples\langchain-document\requirements.txt
 pip install langchain
 ```
 
-The main.py of the langchain-document example loads and processes a pdf document. We simply change the pdf weblink by changing the OnlinePDFLoader line.
-The document proposed is from the [University of Applied Sciences Northwestern Switzerland](https://www.fhnw.ch/en/continuing-education/business).
+Modify the pdf source weblink in main.py by changing the OnlinePDFLoader line.
+The document proposed below is from the [University of Applied Sciences Northwestern Switzerland](https://www.fhnw.ch/en/continuing-education/business) and contains the timetable of the CAS Cybersecurity and Information Risk Management which starts in January 2024.
 
 ```
 # load the pdf and split it into chunks
@@ -172,7 +203,7 @@ llm = Ollama(model="llama2:70b", callback_manager=CallbackManager([StreamingStdO
 
 Start the model with `python .\examples\langchain-document\main.py`.
 
-You now can ask for example `When does the bootcamp 1 start?`.
+At the prompt, start asking questions, ask for example `When does the bootcamp 1 start?`.
 
 <img src="https://github.com/dcasota/ollama-scripts/assets/14890243/22542c60-92f5-4acd-bb22-084e3b7c116f" alt="image" width="1000">
 
