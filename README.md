@@ -12,7 +12,7 @@ The shift from cpu to gpu began quite a while ago, and today's most powerful AI 
 Ollama
 -
 
-In this blog post you learn how to install Ollama and use the so-called langchain-document module, which allows you to specify a PDF document as an LLM learning source.
+In this blog post you learn how to install Ollama and use the so-called langchain-document module, which allows you to specify a PDF document as a LLM learning source.
 
 You can find the Ollama bits on https://ollama.ai with source code on https://github.com/jmorganca/ollama.
 
