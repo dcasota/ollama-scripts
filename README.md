@@ -35,20 +35,23 @@ To make run Ollama from source code you will need to install a few tools first.
    PhysX>Blast seems to become necessary for NVidia gpu support, as well.
    https://github.com/NVIDIA-Omniverse/PhysX
 
-3. Git
+2. Git
    https://git-scm.com/download/win
 
-4. Python
+3. Python
    https://www.python.org/downloads/windows/
 
-5. Go
+4. Go
    https://go.dev/doc/install
 
-6. Gcc
+5. Gcc
    https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/
 
+6. CMake
+   https://cmake.org
+
 7. Winlibs
-   https://winlibs.com/
+   https://winlibs.com
 
 8. Bazel
    https://github.com/bazelbuild/bazel/releases
@@ -119,12 +122,11 @@ Powershell:
 `start-process ollama.exe serve`
 
 Batch console:
-`start "Ollama Large language model runner" .\ollama.exe serve`
+`start "Ollama Large Language Model Runner" .\ollama.exe serve`
 
 It opens a window with a similar content as below.  
 
-<img src="https://github.com/dcasota/ollama-scripts/assets/14890243/98f81dd6-fb9a-488b-bd21-7d459a942e73" alt="image" width="800">  
-
+<img src="https://github.com/dcasota/ollama-scripts/assets/14890243/d633f435-e257-4c1d-bf6a-7844c5ee2e18" alt="image" width="800">  
 
 Download the model chosen.
 
