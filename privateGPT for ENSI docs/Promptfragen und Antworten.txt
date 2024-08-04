@@ -1,0 +1,7 @@
+Was heisst ENSI?
+Welche Kernkraftwerke hat die Schweiz?
+Welche Inspektionarten gibt es für das Kernkraftwerk Beznau?
+Welche Software gibt es für Kernkraftwerke? Als nummerierte Liste auflisten.
+Welche ISO-Normen müssen Schweizer Kernkraftwerke erfüllen? Als nummerierte Liste auflisten.
+Welche Richtlinien müssen Schweizer Kernkraftwerke erfüllen? Eine nummerierte Liste erstellen.
+Welche Richtlinien hat das Eidgenössische Nuklearsicherheitsinspektorat publiziert? Eine nummerierte Liste erstellen.
