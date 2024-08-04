@@ -74,6 +74,7 @@ set source=c:\Users\dcaso\OneDrive\Pers”nlich\Hobbyprojekte\PrivateGPT for ENSI 
 set destination=%PUBLIC%\start.py
 set destinationLinux=/mnt/%destination:\=/%
 set destinationLinux=%destinationLinux::=%
+set destinationLinux=%destinationLinux:/C/=/c/%
 COPY /V /Y "%source%" "%destination%" 1>NUL 2>&1
 wsl --distribution Ph5 -u dcaso -e /bin/bash -c "python %destinationLinux%"
 del %destination%

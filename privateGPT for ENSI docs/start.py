@@ -137,7 +137,12 @@ export SOURCE_DIRECTORY=/mnt/c/'My Web Sites/ENSI'
 cp /mnt/c/Users/dcaso/OneDrive/Persönlich/Hobbyprojekte/'PrivateGPT for ENSI docs'/'PrivateGPT for ENSI docs'/ingest.py ./ingest.py
 cp /mnt/c/Users/dcaso/OneDrive/Persönlich/Hobbyprojekte/'PrivateGPT for ENSI docs'/'PrivateGPT for ENSI docs'/privateGPT.py ./privateGPT.py
 
-python3 ./privateGPT.py --mute-stream
+export ID=`sudo ps -ef | grep "ollama serve" -m 1 | awk '{ print $2 }'`
+if ! [ -n "$ID" ]; then
+    ollama serve &
+fi
+
+python3 ./privateGPT.py --mute-stream --hide-source
 ''' 
  
 ScriptBlock1=r'''
@@ -257,8 +262,13 @@ pip3 install nltk==3.8.1
 # fix issue zipfile.BadZipFile: File is not a zip file, see https://github.com/zylon-ai/private-gpt/issues/345
 python -m nltk.downloader all
 
-# fix 'Cannot submit more than 5,461 embeddings at once.'
+# fix issue (in Ollama 0.3.3, too) : 'Cannot submit more than 5,461 embeddings at once.'
 pip3 install chromadb==0.5.0
+
+# fix issue (in Ollama 0.3.3, too) : 'ValidationError: 1 validation error for LLMChain'
+#                                    llm
+#                                    Can't instantiate abstract class BaseLanguageModel with abstract methods agenerate_prompt, apredict, apredict_messages, generate_prompt, invoke, predict, predict_messages (type=type_error)'
+pip3 install langchain --upgrade
 
 # Chat model
 ollama pull llama3.1
